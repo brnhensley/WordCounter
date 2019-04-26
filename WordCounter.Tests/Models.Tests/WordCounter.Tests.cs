@@ -14,6 +14,7 @@ namespace WordCounter.TestTools
       // Arrange
       // Act
       UserInputs testObject = new UserInputs("jackalope", "Where are my keys");
+
       // Assert
       Assert.AreEqual(typeof(UserInputs), testObject.GetType());
     }
@@ -24,8 +25,10 @@ namespace WordCounter.TestTools
       //Arrange
       UserInputs testObject = new UserInputs("jackalope", "Where are my keys");
       string testWord = "GROSS!1! HAM";
+
       //Act
       string lettersTestWord = testObject.AlphabetOnly(testWord);
+
       // Assert
       Assert.AreEqual("GROSSHAM", lettersTestWord);
     }
@@ -36,8 +39,10 @@ namespace WordCounter.TestTools
     {
       // Arrange
       UserInputs testInput = new UserInputs("Butts", "Cakes");
+
       // Act
       string testGetWord = testInput.GetWord();
+
       // Assert
       Assert.AreEqual("Butts", testGetWord);
     }
@@ -47,8 +52,10 @@ namespace WordCounter.TestTools
     {
       // Arrange
       UserInputs testInput = new UserInputs("Butts", "Cakes are yum");
+
       // Act
       string[] testGetSentence = testInput.GetSentence();
+
       // Assert
       Assert.AreEqual("yum", testGetSentence[2]);
     }
@@ -59,8 +66,10 @@ namespace WordCounter.TestTools
       // Arrange
       UserInputs testInput = new UserInputs("Butts", "Cakes");
       string userSentence = "I am dyin' here";
+
       // Act
       string[] sentenceArray = testInput.SeperateSentenceWords(userSentence);
+
       // Assert
       Assert.AreEqual("dyin", sentenceArray[2]);
     }
@@ -71,9 +80,11 @@ namespace WordCounter.TestTools
     {
       //Arrange
       UserInputs testObject = new UserInputs("!!FUN!!", "Hail Satan666");
+
       //Act
       string testWord = testObject.GetWord();
       string[] testSentence = testObject.GetSentence();
+
       // Assert
       Assert.AreEqual("FUN", testWord);
       Assert.AreEqual("Satan", testSentence[1]);
@@ -84,8 +95,13 @@ namespace WordCounter.TestTools
     public void FindMatches_CompareWordToSentence_True()
     {
       // Arrange
+      UserInputs testObject = new UserInputs("cat", "I ate your cat.");
+
       // Act
+      int wordMatches = testObject.FindMatches();
+
       // Assert
+      Assert.AreEqual(1, wordMatches);
     }
 
   }

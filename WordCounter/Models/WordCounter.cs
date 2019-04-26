@@ -42,15 +42,21 @@ namespace WordCounter.Models
     public int FindMatches()
     {
       int wordMatches = 0;
-      for(int i = 0; i < userSentence.Length; i++)
+      // string userWord = testObject.GetWord();
+      // string[] userSentence = testObject.GetSentence();
+
+      for(int i = 0; i < _userSentence.Length; i++)
       {
-        if (userWord == userSentence[i])
+        if (_userWord == _userSentence[i])
         {
           wordMatches++;
         }
       }
+      
+      return wordMatches;
     }
 
+    // Getters
     public string GetWord()
     {
       return _userWord;
@@ -60,7 +66,6 @@ namespace WordCounter.Models
     {
       return _userSentence;
     }
-
 
   }
 }
