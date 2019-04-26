@@ -23,6 +23,7 @@ namespace WordCounter.Models
     //Removes non-alphabetical chars from the strings & returns them - input is a stand in for both object strings.
     public string AlphabetOnly(string input)
     {
+      //Need to convert sentece to a word Array first, then try to run this on the array elements, then convert that array back to a string.
       string inputLetters = new String(input.Where(Char.IsLetter).ToArray());
       return inputLetters;
     }
