@@ -11,6 +11,7 @@ This is a rad program that will take a user's inputted word and a sentence, then
 ## _Setup/Installation Requirements_
 
 * Make a clone from GitHub at: https://github.com/brnhensley/WordCounter.git
+* Run a dotnet test from the WordCounter.Tests directory, because that is all it does.
 
 ## _Specs_
 
