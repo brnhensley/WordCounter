@@ -23,11 +23,46 @@ namespace WordCounter.TestTools
     {
       //Arrange
       UserInputs testObject = new UserInputs("jackalope", "Where are my keys");
-      string testWord = "GROSS!1!";
+      string testWord = "GROSS!1! HAM";
       //Act
       string lettersTestWord = testObject.AlphabetOnly(testWord);
       // Assert
-      Assert.AreEqual("GROSS", lettersTestWord);
+      Assert.AreEqual("GROSSHAM", lettersTestWord);
     }
+
+    // Getter test
+    [TestMethod]
+    public void GetWord_GetUserWord_True()
+    {
+      // Arrange
+      UserInputs testInput = new UserInputs("Butts", "Cakes");
+      // Act
+      string testGetWord = testInput.GetWord();
+      // Assert
+      Assert.AreEqual("Butts", testGetWord);
+    }
+
+    [TestMethod]
+    public void GetSentence_GetUserSentence_True()
+    {
+      // Arrange
+      UserInputs testInput = new UserInputs("Butts", "Cakes are yum");
+      // Act
+      string testGetSentence = testInput.GetSentence();
+      // Assert
+      Assert.AreEqual("Cakesareyum", testGetSentence);
+    }
+
+    // Test if both UserInputs are being converted by the constructor
+    // [TestMethod]
+    // public void UserInputs_RemoveNonAlphabeticalCharsFromBothUserInputs_True()
+    // {
+    //   //Arrange
+    //   UserInputs testObject = new UserInputs("!!FUN!!", "Hail666Satan");
+    //   //Act
+    //   string lettersTestWord = testObject.AlphabetOnly(testWord);
+    //   // Assert
+    //   Assert.AreEqual(("FUN", testWord) && ("HailSatan", testSentence));
+    // }
   }
 }

@@ -26,7 +26,19 @@ namespace WordCounter.Models
       string inputLetters = new String(input.Where(Char.IsLetter).ToArray());
       return inputLetters;
     }
-    // onlyLetters = new String(myString.Where(Char.IsLetter).ToArray());
+
+    public string GetWord()
+    {
+      return _userWord;
+    }
+
+    public string GetSentence()
+    {
+      return _userSentence;
+    }
+
 
   }
 }
+
+  /// AlphabetOnly IS GOING TO REMOVE ALL SPACES TOO! FUCK!
