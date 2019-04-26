@@ -74,11 +74,22 @@ namespace WordCounter.Models
       return _wordMatches;
     }
 
+    // Setters
     public void SetWord(string newWord)
     {
       _userWord = newWord;
     }
 
+    public void SetSentenceElement(string newSentenceElement, int indexPosition)
+    {
+      _userSentence[indexPosition] = newSentenceElement;
+    }
+
+    // Takes no arguments because you can't choose what to set it to, I do.
+    public void SetWordMatches()
+    {
+      _wordMatches = 666;
+    }
 
   }
 }

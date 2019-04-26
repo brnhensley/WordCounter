@@ -34,7 +34,7 @@ Create a pull request on GitHub.
 
 ## _Technologies Used_
 
-I used C# to build this program.
+I used C# and DuckDuckGo to build this program.
 
 ### _License_
 

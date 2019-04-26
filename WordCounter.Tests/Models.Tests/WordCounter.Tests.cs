@@ -128,8 +128,37 @@ namespace WordCounter.TestTools
       // Act
       testInput.SetWord("dingleberries");
       string newWord = testInput.GetWord();
+
       // Assert
       Assert.AreEqual("dingleberries", newWord);
+    }
+
+    [TestMethod]
+    public void SetSentenceElement_ChangeSentenceElement_True()
+    {
+      // Arrange
+      UserInputs testInput = new UserInputs("butts", "cakes are yum");
+
+      // Act
+      testInput.SetSentenceElement("dingleberries", 0);
+      string[] newSentence = testInput.GetSentence();
+
+      // Assert
+      Assert.AreEqual("dingleberries", newSentence[0]);
+    }
+
+    [TestMethod]
+    public void SetWordMatches_MakesWordMatchesEvil_True()
+    {
+      // Arrange
+      UserInputs testInput = new UserInputs("butts", "cakes are yum");
+
+      // Act
+      testInput.SetWordMatches();
+      int evilMatches = testInput.GetMatches();
+
+      // Assert
+      Assert.AreEqual(666, evilMatches);
     }
 
   }
