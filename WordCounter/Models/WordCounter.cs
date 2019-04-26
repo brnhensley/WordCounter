@@ -18,18 +18,22 @@ namespace WordCounter.Models
       _userWord = letterOnlyWord;
 
       // Take userSentence and send to SeperateSentenceWords()
-      string letterOnlySentence = AlphabetOnly(userSentence); //move into SeperateSentenceWords() ?
+      string letterOnlySentence = SeperateSentenceWords(userSentence); //move into SeperateSentenceWords() ?
       _userSentence = letterOnlySentence;
     }
 
+    // Creates word array from sentence
     public string[] SeperateSentenceWords(string sentenceToArray)
     {
       string[] sentenceArray = sentenceToArray.Split(' ');
+      foreach (word in sentenceArray)
+      {
+        AlphabetOnly(word);
+      }
       return sentenceArray;
-
     }
 
-    //Removes non-alphabetical chars from the strings & returns them - input is a stand in for both object strings.
+    //Removes non-alphabetical chars from the strings & returns them - input is a stand in for both object property strings.
     public string AlphabetOnly(string input)
     {
       //Need to convert sentece to a word Array first, then try to run this on the array elements, then convert that array back to a string.
