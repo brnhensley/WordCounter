@@ -62,7 +62,7 @@ namespace WordCounter.TestTools
       // Act
       string[] sentenceArray = testInput.SeperateSentenceWords(userSentence);
       // Assert
-      Assert.AreEqual("dyin'", sentenceArray[2]);
+      Assert.AreEqual("dyin", sentenceArray[2]);
     }
 
     //Test if both UserInputs are being converted by the constructor
@@ -76,7 +76,7 @@ namespace WordCounter.TestTools
       string[] testSentence = testObject.GetSentence();
       // Assert
       Assert.AreEqual("FUN", testWord);
-      Assert.AreEqual("HailSatan", testSentence);
+      Assert.AreEqual("Hail", testSentence[0]);
     }
 
   }
