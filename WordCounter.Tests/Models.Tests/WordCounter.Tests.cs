@@ -33,45 +33,18 @@ namespace WordCounter.TestTools
       Assert.AreEqual("GROSSHAM", lettersTestWord);
     }
 
-    // Getter test
-    [TestMethod]
-    public void GetWord_GetUserWord_True()
-    {
-      // Arrange
-      UserInputs testInput = new UserInputs("Butts", "Cakes");
-
-      // Act
-      string testGetWord = testInput.GetWord();
-
-      // Assert
-      Assert.AreEqual("butts", testGetWord);
-    }
-
-    [TestMethod]
-    public void GetSentence_GetUserSentence_True()
-    {
-      // Arrange
-      UserInputs testInput = new UserInputs("Butts", "Cakes are yum");
-
-      // Act
-      string[] testGetSentence = testInput.GetSentence();
-
-      // Assert
-      Assert.AreEqual("yum", testGetSentence[2]);
-    }
-
     [TestMethod]
     public void SeperateSentenceWords_MakeArrayOfSentenceWords_True()
     {
       // Arrange
       UserInputs testInput = new UserInputs("Butts", "Cakes");
-      string userSentence = "I am dyin' here";
+      string userSentence = "I am dyin here";
 
       // Act
       string[] sentenceArray = testInput.SeperateSentenceWords(userSentence);
 
       // Assert
-      Assert.AreEqual("dyin", sentenceArray[2]);
+      Assert.AreEqual("am", sentenceArray[1]);
     }
 
     //Test if both UserInputs are being converted by the constructor
@@ -79,7 +52,7 @@ namespace WordCounter.TestTools
     public void UserInputs_RemoveNonAlphabeticalCharsFromBothUserInputs_True()
     {
       //Arrange
-      UserInputs testObject = new UserInputs("!!FUN!!", "Hail Satan666");
+      UserInputs testObject = new UserInputs("!!fun!!", "hail 666satan666");
 
       //Act
       string testWord = testObject.GetWord();
@@ -104,12 +77,39 @@ namespace WordCounter.TestTools
       Assert.AreEqual(4, wordMatches);
     }
 
-    // Test GetMatches and if the UserInputs constructor is saving the word matches when taking input
+    // Getter tests
+    [TestMethod]
+    public void GetWord_GetUserWord_True()
+    {
+      // Arrange
+      UserInputs testInput = new UserInputs("butts", "cakes");
+
+      // Act
+      string testGetWord = testInput.GetWord();
+
+      // Assert
+      Assert.AreEqual("butts", testGetWord);
+    }
+
+    [TestMethod]
+    public void GetSentence_GetUserSentence_True()
+    {
+      // Arrange
+      UserInputs testInput = new UserInputs("butts", "cakes are yum");
+
+      // Act
+      string[] testGetSentence = testInput.GetSentence();
+
+      // Assert
+      Assert.AreEqual("yum", testGetSentence[2]);
+    }
+
+    // Tests both GetMatches and if the UserInputs constructor is saving word matches.
     [TestMethod]
     public void GetMatches_ReturnsMatchCount_True()
     {
       // Arrange
-      UserInputs testObject = new UserInputs("Cat", "My CAT ate your cAT, and some other cats, cat CAt CATs.");
+      UserInputs testObject = new UserInputs("Cat", "My CAT ate your cAT, and some other cats, cat CAt Catapolt.");
 
       // Act
       int wordMatches = testObject.FindMatches();
