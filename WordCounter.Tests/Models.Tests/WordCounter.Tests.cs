@@ -44,7 +44,7 @@ namespace WordCounter.TestTools
       string testGetWord = testInput.GetWord();
 
       // Assert
-      Assert.AreEqual("Butts", testGetWord);
+      Assert.AreEqual("butts", testGetWord);
     }
 
     [TestMethod]
@@ -86,8 +86,8 @@ namespace WordCounter.TestTools
       string[] testSentence = testObject.GetSentence();
 
       // Assert
-      Assert.AreEqual("FUN", testWord);
-      Assert.AreEqual("Satan", testSentence[1]);
+      Assert.AreEqual("fun", testWord);
+      Assert.AreEqual("satan", testSentence[1]);
     }
 
     //Test to Compare userWord and userSentence
@@ -95,18 +95,14 @@ namespace WordCounter.TestTools
     public void FindMatches_CompareWordToSentence_True()
     {
       // Arrange
-      UserInputs testObject = new UserInputs("cat", "I ate your cat.");
+      UserInputs testObject = new UserInputs("Cat", "My CAT ate your cAT, and some other cats, cat CAt cats.");
 
       // Act
       int wordMatches = testObject.FindMatches();
 
       // Assert
-      Assert.AreEqual(1, wordMatches);
+      Assert.AreEqual(4, wordMatches);
     }
 
   }
 }
-
-// Arrange
-// Act
-// Assert

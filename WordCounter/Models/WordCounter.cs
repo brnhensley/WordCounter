@@ -13,10 +13,10 @@ namespace WordCounter.Models
     //UserInputs constructor
     public UserInputs(string userWord, string userSentence)
     {
-      string letterOnlyWord = AlphabetOnly(userWord);
+      string letterOnlyWord = AlphabetOnly(userWord).ToLower();
       _userWord = letterOnlyWord;
 
-      string[] letterOnlySentence = SeperateSentenceWords(userSentence);
+      string[] letterOnlySentence = SeperateSentenceWords(userSentence.ToLower());
       _userSentence = letterOnlySentence;
     }
 
@@ -31,7 +31,7 @@ namespace WordCounter.Models
       return sentenceArray;
     }
 
-    //Removes non-alphabetical chars from the strings & returns them - input is a stand in for both object property strings.
+    //Removes non-alphabetical chars from the strings & returns them
     public string AlphabetOnly(string input)
     {
       string inputLetters = new String(input.Where(Char.IsLetter).ToArray());
@@ -42,8 +42,6 @@ namespace WordCounter.Models
     public int FindMatches()
     {
       int wordMatches = 0;
-      // string userWord = testObject.GetWord();
-      // string[] userSentence = testObject.GetSentence();
 
       for(int i = 0; i < _userSentence.Length; i++)
       {
@@ -52,7 +50,7 @@ namespace WordCounter.Models
           wordMatches++;
         }
       }
-      
+
       return wordMatches;
     }
 
