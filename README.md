@@ -17,12 +17,12 @@ This is a rad program that will take a user's inputted word and a sentence, then
 
 |Objectives|example input|example output|
 |-|-|-|
-|The program will take a user's inputted word and save it to a variable.|scrumptious|string userWord = "scrumptious"|
-|The program will take a user's inputted sentence and save it to a variable.|Look at all these puppies!|string userSentence = "Look at all these puppies!"|
-|The program will ignore non-alphabetical characters|What is that!?|"What is that"|
-|The program will convert all inputs to lower case|BooYA|"booya"|
-|The program will break the users sentence into an array of words|I can't breathe|{ "i", "cant", "breathe" }|
-|The program will check the users word against the user's sentence and print to screen the number of times it appears|"cat", "Who ate the cat?"|1|
+|It will ignore non-alphabetic characters|"WHY!"|"WHY"|
+|It will check if two words are identical|"yes", "no"|false|
+|It will check if two words are identical despite capitalization|"YeS", "yes"|true|
+|It will not select partial matches as a match|"cat", "cattails"|false|
+|It will check if one word appears within a list of words|"yes", "yes I ate the cat"|true|
+|It will count the number of times a word appears in a list of words|"fact", "cool fact, most people don't understand facts"|1|
 
 
 ## _Known Bugs_
