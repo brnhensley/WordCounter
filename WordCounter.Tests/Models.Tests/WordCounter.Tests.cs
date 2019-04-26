@@ -53,6 +53,18 @@ namespace WordCounter.TestTools
       Assert.AreEqual("Cakesareyum", testGetSentence);
     }
 
+    [TestMethod]
+    public void SeperateSentenceWords_MakeArrayOfSentenceWords_True()
+    {
+      // Arrange
+      UserInputs testInput = new UserInputs("Butts", "Cakes");
+      string userSentence = "I am dyin' here";
+      // Act
+      string[] sentenceArray = testInput.SeperateSentenceWords(userSentence);
+      // Assert
+      Assert.AreEqual("dyin'", sentenceArray[2]);
+    }
+
     //Test if both UserInputs are being converted by the constructor
     [TestMethod]
     public void UserInputs_RemoveNonAlphabeticalCharsFromBothUserInputs_True()
@@ -66,5 +78,10 @@ namespace WordCounter.TestTools
       Assert.AreEqual("FUN", testWord);
       Assert.AreEqual("HailSatan", testSentence);
     }
+
   }
 }
+
+// Arrange
+// Act
+// Assert

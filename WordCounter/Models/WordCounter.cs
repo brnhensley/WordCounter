@@ -16,8 +16,17 @@ namespace WordCounter.Models
       //Run both inputs though AlphabetOnly
       string letterOnlyWord = AlphabetOnly(userWord);
       _userWord = letterOnlyWord;
-      string letterOnlySentence = AlphabetOnly(userSentence);
+
+      // Take userSentence and send to SeperateSentenceWords()
+      string letterOnlySentence = AlphabetOnly(userSentence); //move into SeperateSentenceWords() ?
       _userSentence = letterOnlySentence;
+    }
+
+    public string[] SeperateSentenceWords(string sentenceToArray)
+    {
+      string[] sentenceArray = sentenceToArray.Split(' ');
+      return sentenceArray;
+
     }
 
     //Removes non-alphabetical chars from the strings & returns them - input is a stand in for both object strings.
