@@ -48,9 +48,9 @@ namespace WordCounter.TestTools
       // Arrange
       UserInputs testInput = new UserInputs("Butts", "Cakes are yum");
       // Act
-      string testGetSentence = testInput.GetSentence();
+      string[] testGetSentence = testInput.GetSentence();
       // Assert
-      Assert.AreEqual("Cakesareyum", testGetSentence);
+      Assert.AreEqual("yum", testGetSentence[2]);
     }
 
     [TestMethod]
@@ -73,7 +73,7 @@ namespace WordCounter.TestTools
       UserInputs testObject = new UserInputs("!!FUN!!", "Hail 666 Satan");
       //Act
       string testWord = testObject.GetWord();
-      string testSentence = testObject.GetSentence();
+      string[] testSentence = testObject.GetSentence();
       // Assert
       Assert.AreEqual("FUN", testWord);
       Assert.AreEqual("HailSatan", testSentence);

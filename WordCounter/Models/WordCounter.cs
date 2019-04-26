@@ -8,28 +8,26 @@ namespace WordCounter.Models
   public class UserInputs
   {
     private string _userWord;
-    private string _userSentence;
+    private string[] _userSentence;
 
     //UserInputs constructor
     public UserInputs(string userWord, string userSentence)
     {
-      //Run both inputs though AlphabetOnly
       string letterOnlyWord = AlphabetOnly(userWord);
       _userWord = letterOnlyWord;
 
-      // Take userSentence and send to SeperateSentenceWords()
-      string letterOnlySentence = SeperateSentenceWords(userSentence); //move into SeperateSentenceWords() ?
+      string[] letterOnlySentence = SeperateSentenceWords(userSentence); //move into SeperateSentenceWords() ?
       _userSentence = letterOnlySentence;
     }
 
-    // Creates word array from sentence
+    // Creates word array from sentence, sends function to remove non alphabetical letters
     public string[] SeperateSentenceWords(string sentenceToArray)
     {
       string[] sentenceArray = sentenceToArray.Split(' ');
-      foreach (word in sentenceArray)
-      {
-        AlphabetOnly(word);
-      }
+      for(int i = 0 ; i < sentenceArray.Length ; i++)
+        {
+          sentenceArray[i] = AlphabetOnly(sentenceArray[i]);
+        }
       return sentenceArray;
     }
 
@@ -46,7 +44,7 @@ namespace WordCounter.Models
       return _userWord;
     }
 
-    public string GetSentence()
+    public string[] GetSentence()
     {
       return _userSentence;
     }
