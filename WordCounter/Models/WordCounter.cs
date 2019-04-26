@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace WordCounter.Models
 {
@@ -13,15 +14,19 @@ namespace WordCounter.Models
     public UserInputs(string userWord, string userSentence)
     {
       //Run both inputs though AlphabetOnly
-      _userWord = userWord;
-      _userSentence = userSentence;
+      string letterOnlyWord = AlphabetOnly(userWord);
+      _userWord = letterOnlyWord;
+      string letterOnlySentence = AlphabetOnly(userSentence);
+      _userSentence = letterOnlySentence;
     }
 
     //Removes non-alphabetical chars from the strings & returns them - input is a stand in for both object strings.
     public string AlphabetOnly(string input)
     {
-      return input;
+      string inputLetters = new String(input.Where(Char.IsLetter).ToArray());
+      return inputLetters;
     }
+    // onlyLetters = new String(myString.Where(Char.IsLetter).ToArray());
 
   }
 }

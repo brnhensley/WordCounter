@@ -25,9 +25,9 @@ namespace WordCounter.TestTools
       UserInputs testObject = new UserInputs("jackalope", "Where are my keys");
       string testWord = "GROSS!1!";
       //Act
-      string newTestWord = testObject.AlphabetOnly(testWord);
+      string lettersTestWord = testObject.AlphabetOnly(testWord);
       // Assert
-      Assert.AreEqual(testWord, "GROSS");
+      Assert.AreEqual("GROSS", lettersTestWord);
     }
   }
 }
