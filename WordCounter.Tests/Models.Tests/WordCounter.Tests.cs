@@ -8,6 +8,7 @@ namespace WordCounter.TestTools
   [TestClass]
   public class WordCounterTest
   {
+
     [TestMethod]
     public void UserInputs_CreateObjectOfWordAndSentece_True()
     {
@@ -116,6 +117,19 @@ namespace WordCounter.TestTools
 
       // Assert
       Assert.AreEqual(4, wordMatches);
+    }
+
+    [TestMethod]
+    public void SetWord_ChangeUserWordString_True()
+    {
+      // Arrange
+      UserInputs testInput = new UserInputs("butts", "cakes are yum");
+
+      // Act
+      testInput.SetWord("dingleberries");
+      string newWord = testInput.GetWord();
+      // Assert
+      Assert.AreEqual("dingleberries", newWord);
     }
 
   }

@@ -74,5 +74,11 @@ namespace WordCounter.Models
       return _wordMatches;
     }
 
+    public void SetWord(string newWord)
+    {
+      _userWord = newWord;
+    }
+
+
   }
 }
