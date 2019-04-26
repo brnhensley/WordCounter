@@ -1,34 +1,27 @@
-# _Leet Speak_
+# _Word Counter_
 
-#### _A Leet Speak Converter, 4-23-19_
+#### _A Word Counter Program, 4-26-19_
 
-#### _By Megan Schulte, Mike Larragueta, Brian Hensley_
+#### _By Brian Hensley_
 
 ## _Description_
 
-This is a rad app will convert user input into Leetspeak, for maximum cool 😎.
+This is a rad program that will take a user's inputted word and a sentence, then it will tell the user how many times their word appears in their sentence; for maximum cool 😎.
 
 ## _Setup/Installation Requirements_
 
-* Make a clone from GitHub at: https://github.com/meganschultepdx/fp-panuccisPizza.git
-* Open in Atom or similar text editor to view code
-* open .html file in browser for web view
-* you can test functionality in the browser by selecting pizza size and base topping from the drop-downs and adding any additional toppings.
-* you should receive a prompt with the total cost of your pizza.
+* Make a clone from GitHub at: https://github.com/brnhensley/WordCounter.git
 
 ## _Specs_
 
 |Objectives|example input|example output|
 |-|-|-|
-|Return nothing if not a alpha char.| #$ | #$ |
-|It will replace 'e' with '3' and print it to screen|Eater|3at3r|
-|It will replace 'o' with '0' and print it to screen|Oh crap|0h crap|
-|It will replace capital 'L' with '1' and print it to screen|Little idiot|1ittle idiot|
-|It will replace 't' with '7' and print it to screen|Eater|3at3r|
-|It will replace 's' with 'z' unless its the first char of the string and print it to screen|Sucks|Suckz|
-
-
-
+|The program will take a user's inputted word and save it to a variable.|scrumptious|string var userWord = "scrumptious"|
+|The program will take a user's inputted sentence and save it to a variable.|Look at all these puppies!|string var userSentence = "Look at all these puppies!"|
+|The program will ignore non-alphabetical characters|What is that!?|"What is that"|
+|The program will convert all inputs to lower case|BooYA|"booya"|
+|The program will break the users sentence into an array of words|"I can't breathe"|{ "i", "cant" "breathe"}|
+|The program will check the users word against the user's sentece and print to screen the number of times it appears|"cat", "Who ate the cat?"|1|
 
 
 ## _Known Bugs_
@@ -41,10 +34,10 @@ Create a pull request on GitHub.
 
 ## _Technologies Used_
 
-I used C# to build this webpage.
+I used C# to build this program.
 
 ### _License_
 
 GPL, keep information free.
 
-Copyright (c) 2019 Megan Schulte, Mike Larragueta, Brian Hensley
+Copyright (c) 2019 Brian Hensley
