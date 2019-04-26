@@ -9,6 +9,7 @@ namespace WordCounter.Models
   {
     private string _userWord;
     private string[] _userSentence;
+    private int _wordMatches;
 
     //UserInputs constructor
     public UserInputs(string userWord, string userSentence)
@@ -18,6 +19,9 @@ namespace WordCounter.Models
 
       string[] letterOnlySentence = SeperateSentenceWords(userSentence.ToLower());
       _userSentence = letterOnlySentence;
+
+      int wordMatches = FindMatches();
+      _wordMatches = wordMatches;
     }
 
     // Creates word array from sentence, sends function to remove non alphabetical letters
@@ -63,6 +67,11 @@ namespace WordCounter.Models
     public string[] GetSentence()
     {
       return _userSentence;
+    }
+
+    public int GetMatches()
+    {
+      return _wordMatches;
     }
 
   }

@@ -95,7 +95,7 @@ namespace WordCounter.TestTools
     public void FindMatches_CompareWordToSentence_True()
     {
       // Arrange
-      UserInputs testObject = new UserInputs("Cat", "My CAT ate your cAT, and some other cats, cat CAt cats.");
+      UserInputs testObject = new UserInputs("Cat", "My CAT ate your cAT, and some other cats, cat CAt CATs.");
 
       // Act
       int wordMatches = testObject.FindMatches();
@@ -103,6 +103,20 @@ namespace WordCounter.TestTools
       // Assert
       Assert.AreEqual(4, wordMatches);
     }
+
+    [TestMethod]
+    public void GetMatches_ReturnsMatchCount_True()
+    {
+      // Arrange
+      UserInputs testObject = new UserInputs("Cat", "My CAT ate your cAT, and some other cats, cat CAt CATs.");
+
+      // Act
+      int wordMatches = testObject.FindMatches();
+
+      // Assert
+      Assert.AreEqual(4, wordMatches);
+    }
+
 
   }
 }
