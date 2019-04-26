@@ -104,6 +104,7 @@ namespace WordCounter.TestTools
       Assert.AreEqual(4, wordMatches);
     }
 
+    // Test GetMatches and if the UserInputs constructor is saving the word matches when taking input
     [TestMethod]
     public void GetMatches_ReturnsMatchCount_True()
     {
@@ -116,7 +117,6 @@ namespace WordCounter.TestTools
       // Assert
       Assert.AreEqual(4, wordMatches);
     }
-
 
   }
 }
