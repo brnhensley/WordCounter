@@ -70,13 +70,22 @@ namespace WordCounter.TestTools
     public void UserInputs_RemoveNonAlphabeticalCharsFromBothUserInputs_True()
     {
       //Arrange
-      UserInputs testObject = new UserInputs("!!FUN!!", "Hail 666 Satan");
+      UserInputs testObject = new UserInputs("!!FUN!!", "Hail Satan666");
       //Act
       string testWord = testObject.GetWord();
       string[] testSentence = testObject.GetSentence();
       // Assert
       Assert.AreEqual("FUN", testWord);
-      Assert.AreEqual("Hail", testSentence[0]);
+      Assert.AreEqual("Satan", testSentence[1]);
+    }
+
+    //Test to Compare userWord and userSentence
+    [TestMethod]
+    public void FindMatches_CompareWordToSentence_True()
+    {
+      // Arrange
+      // Act
+      // Assert
     }
 
   }

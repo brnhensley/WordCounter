@@ -16,7 +16,7 @@ namespace WordCounter.Models
       string letterOnlyWord = AlphabetOnly(userWord);
       _userWord = letterOnlyWord;
 
-      string[] letterOnlySentence = SeperateSentenceWords(userSentence); //move into SeperateSentenceWords() ?
+      string[] letterOnlySentence = SeperateSentenceWords(userSentence);
       _userSentence = letterOnlySentence;
     }
 
@@ -24,7 +24,7 @@ namespace WordCounter.Models
     public string[] SeperateSentenceWords(string sentenceToArray)
     {
       string[] sentenceArray = sentenceToArray.Split(' ');
-      for(int i = 0 ; i < sentenceArray.Length ; i++)
+      for(int i = 0; i < sentenceArray.Length; i++)
         {
           sentenceArray[i] = AlphabetOnly(sentenceArray[i]);
         }
@@ -34,9 +34,21 @@ namespace WordCounter.Models
     //Removes non-alphabetical chars from the strings & returns them - input is a stand in for both object property strings.
     public string AlphabetOnly(string input)
     {
-      //Need to convert sentece to a word Array first, then try to run this on the array elements, then convert that array back to a string.
       string inputLetters = new String(input.Where(Char.IsLetter).ToArray());
       return inputLetters;
+    }
+
+    // Compares userWord to the elements of userSentence returns number of matches
+    public int FindMatches()
+    {
+      int wordMatches = 0;
+      for(int i = 0; i < userSentence.Length; i++)
+      {
+        if (userWord == userSentence[i])
+        {
+          wordMatches++;
+        }
+      }
     }
 
     public string GetWord()
@@ -52,5 +64,3 @@ namespace WordCounter.Models
 
   }
 }
-
-  /// AlphabetOnly IS GOING TO REMOVE ALL SPACES TOO! FUCK!
