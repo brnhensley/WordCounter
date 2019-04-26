@@ -29,9 +29,9 @@ namespace WordCounter.Models
     {
       string[] sentenceArray = sentenceToArray.Split(' ');
       for(int i = 0; i < sentenceArray.Length; i++)
-        {
-          sentenceArray[i] = AlphabetOnly(sentenceArray[i]);
-        }
+      {
+        sentenceArray[i] = AlphabetOnly(sentenceArray[i]);
+      }
       return sentenceArray;
     }
 
