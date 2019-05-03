@@ -5,14 +5,14 @@ using System.Linq;
 namespace WordCounter.Models
 {
 
-  public class UserInputs
+  public class UserInput
   {
     private string _userWord;
     private string[] _userSentence;
     private int _wordMatches;
 
-    //UserInputs constructor
-    public UserInputs(string userWord, string userSentence)
+      //UserInput constructor
+    public UserInput(string userWord, string userSentence)
     {
       string letterOnlyWord = AlphabetOnly(userWord).ToLower();
       _userWord = letterOnlyWord;
@@ -47,9 +47,9 @@ namespace WordCounter.Models
     {
       int wordMatches = 0;
 
-      for(int i = 0; i < _userSentence.Length; i++)
+      foreach (string word in _userSentence)
       {
-        if (_userWord == _userSentence[i])
+        if (_userWord == word)
         {
           wordMatches++;
         }

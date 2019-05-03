@@ -10,21 +10,21 @@ namespace WordCounter.TestTools
   {
 
     [TestMethod]
-    public void UserInputs_CreateObjectOfWordAndSentece_True()
+    public void UserInput_CreateObjectOfWordAndSentece_True()
     {
       // Arrange
       // Act
-      UserInputs testObject = new UserInputs("jackalope", "Where are my keys");
+      UserInput testObject = new UserInput("jackalope", "Where are my keys");
 
       // Assert
-      Assert.AreEqual(typeof(UserInputs), testObject.GetType());
+      Assert.AreEqual(typeof(UserInput), testObject.GetType());
     }
 
     [TestMethod]
     public void AlphabetOnly_RemoveNonAlphabeticalChars_True()
     {
       //Arrange
-      UserInputs testObject = new UserInputs("jackalope", "Where are my keys");
+      UserInput testObject = new UserInput("jackalope", "Where are my keys");
       string testWord = "GROSS!1! HAM";
 
       //Act
@@ -38,7 +38,7 @@ namespace WordCounter.TestTools
     public void SeperateSentenceWords_MakeArrayOfSentenceWords_True()
     {
       // Arrange
-      UserInputs testInput = new UserInputs("Butts", "Cakes");
+      UserInput testInput = new UserInput("Butts", "Cakes");
       string userSentence = "I am dyin here";
 
       // Act
@@ -48,12 +48,12 @@ namespace WordCounter.TestTools
       Assert.AreEqual("am", sentenceArray[1]);
     }
 
-    //Test if both UserInputs are being converted by the constructor
+    //Test if both UserInput are being converted by the constructor
     [TestMethod]
-    public void UserInputs_RemoveNonAlphabeticalCharsFromBothUserInputs_True()
+    public void UserInput_RemoveNonAlphabeticalCharsFromBothUserInput_True()
     {
       //Arrange
-      UserInputs testObject = new UserInputs("!!fun!!", "hail 666satan666");
+      UserInput testObject = new UserInput("!!fun!!", "hail 666satan666");
 
       //Act
       string testWord = testObject.GetWord();
@@ -69,7 +69,7 @@ namespace WordCounter.TestTools
     public void FindMatches_CompareWordToSentence_True()
     {
       // Arrange
-      UserInputs testObject = new UserInputs("Cat", "My CAT ate your cAT, and some other cats, cat CAt CATs.");
+      UserInput testObject = new UserInput("Cat", "My CAT ate your cAT, and some other cats, cat CAt CATs.");
 
       // Act
       int wordMatches = testObject.FindMatches();
@@ -83,7 +83,7 @@ namespace WordCounter.TestTools
     public void GetWord_GetUserWord_True()
     {
       // Arrange
-      UserInputs testInput = new UserInputs("butts", "cakes");
+      UserInput testInput = new UserInput("butts", "cakes");
 
       // Act
       string testGetWord = testInput.GetWord();
@@ -96,7 +96,7 @@ namespace WordCounter.TestTools
     public void GetSentence_GetUserSentence_True()
     {
       // Arrange
-      UserInputs testInput = new UserInputs("butts", "cakes are yum");
+      UserInput testInput = new UserInput("butts", "cakes are yum");
 
       // Act
       string[] testGetSentence = testInput.GetSentence();
@@ -105,12 +105,12 @@ namespace WordCounter.TestTools
       Assert.AreEqual("yum", testGetSentence[2]);
     }
 
-    // Tests both GetMatches and if the UserInputs constructor is saving word matches.
+    // Tests both GetMatches and if the UserInput constructor is saving word matches.
     [TestMethod]
     public void GetMatches_ReturnsMatchCount_True()
     {
       // Arrange
-      UserInputs testObject = new UserInputs("Cat", "My CAT ate your cAT, and some other cats, cat CAt Catapolt.");
+      UserInput testObject = new UserInput("Cat", "My CAT ate your cAT, and some other cats, cat CAt Catapolt.");
 
       // Act
       int wordMatches = testObject.FindMatches();
@@ -123,7 +123,7 @@ namespace WordCounter.TestTools
     public void SetWord_ChangeUserWordString_True()
     {
       // Arrange
-      UserInputs testInput = new UserInputs("butts", "cakes are yum");
+      UserInput testInput = new UserInput("butts", "cakes are yum");
 
       // Act
       testInput.SetWord("dingleberries");
@@ -137,7 +137,7 @@ namespace WordCounter.TestTools
     public void SetSentenceElement_ChangeSentenceElement_True()
     {
       // Arrange
-      UserInputs testInput = new UserInputs("butts", "cakes are yum");
+      UserInput testInput = new UserInput("butts", "cakes are yum");
 
       // Act
       testInput.SetSentenceElement("dingleberries", 0);
@@ -151,7 +151,7 @@ namespace WordCounter.TestTools
     public void SetWordMatches_MakesWordMatchesEvil_True()
     {
       // Arrange
-      UserInputs testInput = new UserInputs("butts", "cakes are yum");
+      UserInput testInput = new UserInput("butts", "cakes are yum");
 
       // Act
       testInput.SetWordMatches();
