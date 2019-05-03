@@ -13,17 +13,29 @@ form {
   margin-top: 20px;
 }
 
-.zardoz {
-  position: re
-  width: 500px;
-  text-align: center;
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /* width: 500px; */
 }
 
+.zardoz {
+  position: relative;
+  width: 500px;
+}
+
+div {
+  margin-left: 25%;
+  margin-right: 25%;
+  /* left: 30%;
+  right: 30%; */
+}
 #word {
   font-weight: bold;
   font-size: 50px;
   position: absolute;
-  top: 72%;
-  left: 45%;
+  top: 65%;
+  left: 54%;
   color: white;
 }
