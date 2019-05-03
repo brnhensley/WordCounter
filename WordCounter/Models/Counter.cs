@@ -8,7 +8,8 @@ namespace WordCounter.Models
   public class Counter
   {
     private string _userWord;
-    private string[] _userSentence;
+    private string _userSentence;
+    private string[] _userSentenceArray;
     private int _wordMatches;
 
       //Counter constructor
@@ -16,9 +17,10 @@ namespace WordCounter.Models
     {
       string letterOnlyWord = AlphabetOnly(userWord).ToLower();
       _userWord = letterOnlyWord;
+      _userSentence = userSentence;
 
       string[] letterOnlySentence = SeperateSentenceWords(userSentence.ToLower());
-      _userSentence = letterOnlySentence;
+      _userSentenceArray = letterOnlySentence;
 
       int wordMatches = FindMatches();
       _wordMatches = wordMatches;
@@ -47,7 +49,7 @@ namespace WordCounter.Models
     {
       int wordMatches = 0;
 
-      foreach (string word in _userSentence)
+      foreach (string word in _userSentenceArray)
       {
         if (_userWord == word)
         {
@@ -64,9 +66,14 @@ namespace WordCounter.Models
       return _userWord;
     }
 
-    public string[] GetSentence()
+    public string GetSentence()
     {
       return _userSentence;
+    }
+
+    public string[] GetSentenceArray()
+    {
+      return _userSentenceArray;
     }
 
     public int GetMatches()
@@ -82,7 +89,7 @@ namespace WordCounter.Models
 
     public void SetSentenceElement(string newSentenceElement, int indexPosition)
     {
-      _userSentence[indexPosition] = newSentenceElement;
+      _userSentenceArray[indexPosition] = newSentenceElement;
     }
 
     // Takes no arguments because you can't choose what to set it to, I do.

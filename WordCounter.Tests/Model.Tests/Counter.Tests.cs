@@ -57,7 +57,7 @@ namespace WordCounter.TestTools
 
       //Act
       string testWord = testObject.GetWord();
-      string[] testSentence = testObject.GetSentence();
+      string[] testSentence = testObject.GetSentenceArray();
 
       // Assert
       Assert.AreEqual("fun", testWord);
@@ -96,13 +96,26 @@ namespace WordCounter.TestTools
     public void GetSentence_GetUserSentence_True()
     {
       // Arrange
+      Counter testInput = new Counter("butts", "cakes");
+
+      // Act
+      string testGetSentence = testInput.GetSentence();
+
+      // Assert
+      Assert.AreEqual("cakes", testGetSentence);
+    }
+
+    [TestMethod]
+    public void GetSentenceArray_GetUserSentence_True()
+    {
+      // Arrange
       Counter testInput = new Counter("butts", "cakes are yum");
 
       // Act
-      string[] testGetSentence = testInput.GetSentence();
+      string[] testGetSentenceArray = testInput.GetSentenceArray();
 
       // Assert
-      Assert.AreEqual("yum", testGetSentence[2]);
+      Assert.AreEqual("yum", testGetSentenceArray[2]);
     }
 
     // Tests both GetMatches and if the Counter constructor is saving word matches.
@@ -141,7 +154,7 @@ namespace WordCounter.TestTools
 
       // Act
       testInput.SetSentenceElement("dingleberries", 0);
-      string[] newSentence = testInput.GetSentence();
+      string[] newSentence = testInput.GetSentenceArray();
 
       // Assert
       Assert.AreEqual("dingleberries", newSentence[0]);
