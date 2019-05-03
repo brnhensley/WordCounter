@@ -1,9 +1,12 @@
 @using WordCounter.Models;
 
+@{
+  Layout = "_Layout";
+}
 
-<center><h3>Here is your word count!</h3></center>
+<h3>Here is your word count!</h3>
 
-<center><h1>The word @Model.UserWord appears @Model.WordMatches times in your sentence:</h1></center>
-<center><h3>@Model.UserSentence</h3></center>
+<h1>The word "@Model.UserWord" appears @Model.WordMatches time(s) in the sentence:</h1>
+<h2><em>@Model.UserSentence</em></h2>
 
-<h2><a href="/counter/new">Want to go again!</a></h2>
+<h3><a href="/counter/new">Want to go again?</a></h3>

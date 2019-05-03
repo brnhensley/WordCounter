@@ -1,24 +1,22 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset='utf-8'>
-    <title>Word Counter</title>
-  </head>
-  <body>
-    <center>
-      <h1>Let's count some words!</h1>
-      <h2>Enter a word and a sentence and I'll tell you how many time the word appears in the sentence!</h2>
-    </center>
+@{
+  Layout = "_Layout";
+}
 
-    <form action="/counter" method="post">
+<center>
+  <h1>Feed Zardoz your human vocabulary to count some words!</h1>
 
-      <label for="userWord">Give me a word!</label>
-      <input id="userWord" name="userWord" type="text">
+  <h2>Enter a word and a sentence and Zardoz will tell you how many times the word appears in the sentence!</h2>
+</center>
 
-      <label for="userSentence">Enter a sentence!</label>
-      <input id="userSentence" name="userSentence" type="text">
+<form action="/counter" method="post">
 
-      <button type="submit">Submit</button>
-    </form>
-  </body>
-</html>
+  <label for="userWord">Feed me a word!</label>
+  <input id="userWord" name="userWord" type="text">
+
+  <label for="userSentence">Feed me a sentence!</label>
+  <input id="userSentence" name="userSentence" type="text">
+
+  <button type="submit">Submit</button>
+</form>
+
+<img src="~/img/zardoz.png" alt="The gun is good.">
