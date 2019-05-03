@@ -1,15 +1,13 @@
+@using WordCounter.Models;
+
 @{
-  Layout = "_Layout";
+Layout = "_Layout";
 }
 
-<center>
-  <h1>Feed Zardoz your human vocabulary to count some words!</h1>
-
-  <h2>Enter a word and a sentence and Zardoz will tell you how many times the word appears in the sentence!</h2>
-</center>
+<h1>Feed Zardoz your human vocabulary to count some words!</h1>
+<h2>Enter a word and a sentence and Zardoz will tell you how many times the word appears in the sentence!</h2>
 
 <form action="/counter" method="post">
-
   <label for="userWord">Feed me a word!</label>
   <input id="userWord" name="userWord" type="text">
 

@@ -16,7 +16,9 @@ namespace WordCounter.Controllers
     public ActionResult Index(string userWord, string userSentence)
     {
       Counter myCounter = new Counter(userWord, userSentence);
-      return View(myCounter);
+      return View(myCounter);//, allWords);
+      //I was not able to get this word list working before deadline
+      // List<Counter> allWords = Counter.GetAll();
     }
 
   }

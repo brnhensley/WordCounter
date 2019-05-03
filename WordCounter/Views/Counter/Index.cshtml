@@ -5,13 +5,23 @@
 }
 
 <h1>You receieve Zardoz's blessing in the form of a word count!</h1>
-
 <h2>The word "@Model.UserWord" appears @Model.WordMatches time(s) in the sentence:</h2>
 <h3><em>@Model.UserSentence</em></h3>
 
 <h4><a href="/counter/new">Want to go again?</a></h4>
 
 <div class="zardoz">
-    <img id="zardoz" src="~/img/zardoz.png" alt="The @Model.UserWord.ToUpper() is good.">
-    <h1 id="word">@Model.UserWord.ToUpper()</h1>
+  <img id="zardoz" src="~/img/zardoz.png" alt="The @Model.UserWord.ToUpper() is good.">
+  <h1 id="word">@Model.UserWord.ToUpper()</h1>
 </div>
+
+
+@* I was not able to make this work before deadline //
+<h2>Words Zardoz has spoken thus far:</h2>
+<ul>
+  @foreach (Counter word in Model._instances)
+  {
+    <li>@word.UserWord</li>
+  }
+}
+</ul> *@

@@ -31,7 +31,7 @@ namespace WordCounter
 
     public void Configure(IApplicationBuilder app)
     {
-      app.UseDeveloperExceptionPage();  // This is the new line of code
+      app.UseDeveloperExceptionPage();  // gives more detailed errors
       app.UseMvc(routes =>
       {
         routes.MapRoute(
@@ -39,7 +39,7 @@ namespace WordCounter
         template: "{controller=Home}/{action=Index}/{id?}");
       });
 
-      app.UseStaticFiles();
+      app.UseStaticFiles();             //  allows use of images
 
       app.Run(async (context) =>
       {
