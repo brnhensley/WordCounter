@@ -6,8 +6,12 @@ using WordCounter.Models;
 namespace WordCounter.TestTools
 {
   [TestClass]
-  public class WordCounterTest
+  public class WordCounterTest : IDisposable
   {
+    public void Dispose()
+    {
+      Counter.ClearAll();
+    }
 
     [TestMethod]
     public void Counter_CreateObjectOfWordAndSentece_True()
@@ -172,6 +176,19 @@ namespace WordCounter.TestTools
 
       // Assert
       Assert.AreEqual("dingleberries", newSentence[0]);
+    }
+
+    [TestMethod]
+    public void GetAll_ReturnsEmptyList_CounterList()
+    {
+      // Arrange
+      List<Counter> newList = new List<Counter> {};
+
+      // Act
+      List<Counter> result = Counter.GetAll();
+
+      // Assert
+      CollectionAssert.AreEqual(newList, result);
     }
 
   }

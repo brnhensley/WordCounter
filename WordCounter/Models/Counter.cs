@@ -11,8 +11,10 @@ namespace WordCounter.Models
     public string UserSentence {get; set;}
     private string[] _userSentenceArray;
     public int WordMatches {get;}
+    private static List<Counter> _instances = new List<Counter> {};
+    public int Id {get;}
 
-      //Counter constructor
+    //Counter constructor
     public Counter(string userWord, string userSentence)
     {
       string letterOnlyWord = AlphabetOnly(userWord).ToLower();
@@ -24,6 +26,9 @@ namespace WordCounter.Models
 
       int wordMatches = FindMatches();
       WordMatches = wordMatches;
+
+      _instances.Add(this);
+      Id = _instances.Count;
     }
 
     // Creates word array from sentence, sends function to remove non alphabetical letters
@@ -60,10 +65,20 @@ namespace WordCounter.Models
       return wordMatches;
     }
 
+    public static void ClearAll()
+    {
+      _instances.Clear();
+    }
+
     // Getters
     public string[] GetSentenceArray()
     {
       return _userSentenceArray;
+    }
+
+    public static List<Counter> GetAll()
+    {
+      return _instances;
     }
 
     // Setters
@@ -71,6 +86,7 @@ namespace WordCounter.Models
     {
       _userSentenceArray[indexPosition] = newSentenceElement;
     }
+
 
   }
 }
