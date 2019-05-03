@@ -2,9 +2,13 @@ body {
   background-color: skyblue;
   text-align: center;
   margin: 5%;
-  margin
 }
 
 img {
   width: 50%;
+}
+
+form {
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
