@@ -56,7 +56,7 @@ namespace WordCounter.TestTools
       Counter testObject = new Counter("!!fun!!", "hail 666satan666");
 
       //Act
-      string testWord = testObject.GetWord();
+      string testWord = testObject.UserWord;
       string[] testSentence = testObject.GetSentenceArray();
 
       // Assert
@@ -86,7 +86,7 @@ namespace WordCounter.TestTools
       Counter testInput = new Counter("butts", "cakes");
 
       // Act
-      string testGetWord = testInput.GetWord();
+      string testGetWord = testInput.UserWord;
 
       // Assert
       Assert.AreEqual("butts", testGetWord);
@@ -99,7 +99,7 @@ namespace WordCounter.TestTools
       Counter testInput = new Counter("butts", "cakes");
 
       // Act
-      string testGetSentence = testInput.GetSentence();
+      string testGetSentence = testInput.UserSentence;
 
       // Assert
       Assert.AreEqual("cakes", testGetSentence);
@@ -126,10 +126,10 @@ namespace WordCounter.TestTools
       Counter testObject = new Counter("Cat", "My CAT ate your cAT, and some other cats, cat CAt Catapolt.");
 
       // Act
-      int wordMatches = testObject.FindMatches();
+      int matches = testObject.WordMatches;
 
       // Assert
-      Assert.AreEqual(4, wordMatches);
+      Assert.AreEqual(4, matches);
     }
 
     [TestMethod]
@@ -139,11 +139,25 @@ namespace WordCounter.TestTools
       Counter testInput = new Counter("butts", "cakes are yum");
 
       // Act
-      testInput.SetWord("dingleberries");
-      string newWord = testInput.GetWord();
+      testInput.UserWord = "dingleberries";
+      string newWord = testInput.UserWord;
 
       // Assert
       Assert.AreEqual("dingleberries", newWord);
+    }
+
+    [TestMethod]
+    public void SetSentence_ChangeUserSentenceString_True()
+    {
+      // Arrange
+      Counter testInput = new Counter("butts", "cakes are yum");
+
+      // Act
+      testInput.UserSentence = "dingleberries are cool";
+      string newSentence = testInput.UserSentence;
+
+      // Assert
+      Assert.AreEqual("dingleberries are cool", newSentence);
     }
 
     [TestMethod]
@@ -158,20 +172,6 @@ namespace WordCounter.TestTools
 
       // Assert
       Assert.AreEqual("dingleberries", newSentence[0]);
-    }
-
-    [TestMethod]
-    public void SetWordMatches_MakesWordMatchesEvil_True()
-    {
-      // Arrange
-      Counter testInput = new Counter("butts", "cakes are yum");
-
-      // Act
-      testInput.SetWordMatches();
-      int evilMatches = testInput.GetMatches();
-
-      // Assert
-      Assert.AreEqual(666, evilMatches);
     }
 
   }
