@@ -191,5 +191,32 @@ namespace WordCounter.TestTools
       CollectionAssert.AreEqual(newList, result);
     }
 
+    [TestMethod]
+    public void GetAll_ReturnsUserWords_CounterList()
+    {
+      // Arrange
+      Counter newCounter1 = new Counter("walk", "whatever man");
+      Counter newCounter2 = new Counter("run", "no way");
+      List<Counter> newList = new List<Counter> { newCounter1, newCounter2 };
+
+      // Act
+      List<Counter> result = Counter.GetAll();
+
+      // Assert
+      CollectionAssert.AreEqual(newList, result);
+    }
+
+    [TestMethod]
+    public void GetId_CountersInstantiateWithAnIdAndGetterReturns_Int()
+    {
+      // Arrange
+      Counter newCounter = new Counter("stink", "no stink");
+
+      //Act
+      int result = newCounter.Id;
+
+      //Assert
+      Assert.AreEqual(1, result);
+    }
   }
 }
