@@ -11,7 +11,11 @@ This is a rad program that will take a user's inputted word and a sentence, then
 ## _Setup/Installation Requirements_
 
 * Make a clone from GitHub at: https://github.com/brnhensley/WordCounter.git
-* Run a dotnet test from the WordCounter.Tests directory, because that is all it does.
+* Run $dotnet run from the WordCounter directory.
+
+* Open http://localhost:5000/
+
+* Enter a word and a sentence and find out how many times that word appears in that sentence!
 
 ## _Specs_
 
@@ -35,7 +39,7 @@ Create a pull request on GitHub.
 
 ## _Technologies Used_
 
-I used C# and DuckDuckGo to build this program.
+I used C#, Razor, and DuckDuckGo to build this program.
 
 ### _License_
 
