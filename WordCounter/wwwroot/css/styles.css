@@ -4,11 +4,26 @@ body {
   margin: 5%;
 }
 
-img {
+#sean {
   width: 50%;
 }
 
 form {
   margin-bottom: 20px;
   margin-top: 20px;
+}
+
+.zardoz {
+  position: re
+  width: 500px;
+  text-align: center;
+}
+
+#word {
+  font-weight: bold;
+  font-size: 50px;
+  position: absolute;
+  top: 72%;
+  left: 45%;
+  color: white;
 }
