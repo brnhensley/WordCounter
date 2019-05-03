@@ -15,3 +15,8 @@
 /Users/admin/Documents/Code/WordCounter.Solution/WordCounter.Tests/obj/Debug/netcoreapp2.2/WordCounter.Tests.csproj.CopyComplete
 /Users/admin/Documents/Code/WordCounter.Solution/WordCounter.Tests/obj/Debug/netcoreapp2.2/WordCounter.Tests.dll
 /Users/admin/Documents/Code/WordCounter.Solution/WordCounter.Tests/obj/Debug/netcoreapp2.2/WordCounter.Tests.pdb
+/Users/admin/Documents/Code/WordCounter.Solution/WordCounter.Tests/bin/Debug/netcoreapp2.2/WordCounter.Views.dll
+/Users/admin/Documents/Code/WordCounter.Solution/WordCounter.Tests/bin/Debug/netcoreapp2.2/WordCounter.Views.pdb
+/Users/admin/Documents/Code/WordCounter.Solution/WordCounter.Tests/obj/Debug/netcoreapp2.2/WordCounter.Tests.RazorAssemblyInfo.cache
+/Users/admin/Documents/Code/WordCounter.Solution/WordCounter.Tests/obj/Debug/netcoreapp2.2/WordCounter.Tests.RazorAssemblyInfo.cs
+/Users/admin/Documents/Code/WordCounter.Solution/WordCounter.Tests/obj/Debug/netcoreapp2.2/WordCounter.Tests.RazorTargetAssemblyInfo.cache
